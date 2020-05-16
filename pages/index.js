@@ -4,6 +4,7 @@ const Home = () => {
   const [toggle, setToggle] = useState(false)
 
   const Toggle = () => {
+    console.log()
     setToggle(!toggle)
   }
 
@@ -20,18 +21,30 @@ const Home = () => {
           <button onClick={Toggle}>
             <img src="/ham.svg" className="burger" />
           </button>
-          <nav id="homeNav" style={{
-            display: toggle ? 'block' : 'none',
-            position: 'absolute',
-            top: 0,
-            left: 0
-          }}>
-            <ul>ABOUT US</ul>
-            <ul>LEARN MORE</ul>
-            <ul>DONATE NOW!</ul>
-          </nav>
+          {toggle &&  <nav id="homeNav">
+              <ul>ABOUT US</ul>
+              <ul>LEARN MORE</ul>
+              <ul>DONATE NOW!</ul>
+            </nav>}
         </div>
       </header>
+
+
+      <main>
+        <div>
+          <h4>
+            Work for good, donate with a purpose
+          </h4>
+          <p>
+            Go from passion project to nonprofit and get 
+            started the right way. Become eligible to file 
+            for 501(c)(3) tax-exempt status and more.
+          </p>
+          <button>
+            DONATE NOW
+          </button>
+        </div>
+      </main>
 
       <style jsx>{`
         button {
