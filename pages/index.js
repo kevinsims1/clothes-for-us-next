@@ -4,7 +4,6 @@ const Home = () => {
   const [toggle, setToggle] = useState(false)
 
   const Toggle = () => {
-    console.log()
     setToggle(!toggle)
   }
 
@@ -34,22 +33,49 @@ const Home = () => {
 
 
       <main>
-        <div>
-          <h4>
+        <div className='section'>
+          <h1>
             Work for good, donate with a purpose
-          </h4>
+          </h1>
           <p>
             Go from passion project to nonprofit and get 
             started the right way. Become eligible to file 
             for 501(c)(3) tax-exempt status and more.
           </p>
-          <button>
+          <button className='donateBtn'>
             DONATE NOW
           </button>
         </div>
       </main>
 
       <style jsx>{`
+        .donateBtn{
+          background-color: red;
+          cursor: pointer;
+          margin: 1em
+        }
+
+        .donateBtn:hover{
+          background-color: black;
+          color: white
+        }
+        .section{
+          margin: 4em;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        h1{
+          text-align: center;
+          font-weight: 100;
+        }
+
+        p{
+          text-align: center;
+          margin: 1em
+        }
+
         .dropDown{
           float: right;
           position: relative;
