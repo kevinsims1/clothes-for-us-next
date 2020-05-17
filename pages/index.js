@@ -18,14 +18,17 @@ const Home = () => {
           flexDirection: 'column',
           position: 'relative'
         }}>
-          <button onClick={Toggle}>
-            <img src="/ham.svg" className="burger" />
-          </button>
-          {toggle &&  <nav id="homeNav">
+          <div className='dropDown'>
+            <button onClick={Toggle}>
+              <img src="/ham.svg" className="burger" />
+            </button>
+            {toggle &&  <nav id="homeNav">
               <ul>ABOUT US</ul>
               <ul>LEARN MORE</ul>
               <ul>DONATE NOW!</ul>
             </nav>}
+          </div>
+          
         </div>
       </header>
 
@@ -47,6 +50,12 @@ const Home = () => {
       </main>
 
       <style jsx>{`
+        .dropDown{
+          float: right;
+          position: relative;
+          display: inline-block;
+        }
+
         button {
           margin: 0;
           padding: 0;
@@ -61,6 +70,15 @@ const Home = () => {
           max-width: 100px;
         }
 
+        #homeNav{
+          position: absolute;
+          background-color: #f1f1f1;
+          min-width: 160px;
+          overflow: auto;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          right: 0;
+          z-index: 1;
+        }
       
 
         .burger {
@@ -80,8 +98,13 @@ const Home = () => {
 
           #homeNav {
             display: flex !important;
-            flex-direction: row;
-            align-items: center;
+            flex-direction: row !important;
+            align-items: center !important;
+            box-shadow: none !important;
+            z-index: 0 !important;
+            background: none !important;
+            position: relative !important
+
           }
         }
 
