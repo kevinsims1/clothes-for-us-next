@@ -46,20 +46,60 @@ const Home = () => {
             DONATE NOW
           </button>
         </div>
+        <div className='section'>
+          <h1>
+            Apply for clothing assistance here
+          </h1>
+          <p>
+            Do you or your children need clothes? 
+            Apply now and if accepted we will send you
+            a years worth of clothing.
+          </p>
+          <button className='applyBtn'>
+            APPLY NOW
+          </button>
+        </div>
+        <div className='section'>
+          <h1>
+            Work for good, donate with a purpose
+          </h1>
+          <p>
+            Go from passion project to nonprofit and get 
+            started the right way. Become eligible to file 
+            for 501(c)(3) tax-exempt status and more.
+          </p>
+          <button className='donateBtn'>
+            DONATE NOW
+          </button>
+        </div>
       </main>
 
       <style jsx>{`
+        .applyBtn{
+           display:inline-block;
+           padding:0.35em 1.2em;
+           border:0.1em solid #FFFFFF;
+           margin: .5em;
+           text-decoration:none;
+           background-color: black;
+           text-align:center;
+           transition: all 0.2s;
+           color: #fff
+        }
+
+        .applyBtn:hover{
+          border-color: black;
+          background-color:red;
+          color: #fff
+        }
+
         .donateBtn{
            display:inline-block;
            padding:0.35em 1.2em;
            border:0.1em solid #FFFFFF;
-           margin:0 0.3em 0.3em 0;
-           border-radius:0.12em;
-           box-sizing: border-box;
+           margin: .5em;
            text-decoration:none;
-           font-family:'Roboto',sans-serif;
-           font-weight:300;
-           background-color: black;
+           background-color: red;
            text-align:center;
            transition: all 0.2s;
            color: #fff
@@ -67,11 +107,11 @@ const Home = () => {
 
         .donateBtn:hover{
           border-color: red;
-          background-color:#fff;
-          color: black
+          background-color:black;
+          color: #fff
         }
         .section{
-          margin: 4em;
+          margin: 5em;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -79,12 +119,13 @@ const Home = () => {
 
         h1{
           text-align: center;
-          font-weight: 100;
+          font-weight: normal;
+          margin: 0
         }
 
         p{
           text-align: center;
-          margin: 1em
+          margin: .5em
         }
 
         .dropDown{
@@ -94,7 +135,7 @@ const Home = () => {
         }
 
         button {
-          margin: 0;
+          margin: .5em;
           padding: 0;
           border: none;
           background-color: none;
