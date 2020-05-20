@@ -9,6 +9,9 @@ const Home = () => {
 
   return (
     <div className="container">
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet" />
+      </head>
       <header className="header">
         <img src="/logo-4.svg" className="logo" />
         <div style={{
@@ -75,16 +78,22 @@ const Home = () => {
       </main>
 
       <style jsx>{`
-        .applyBtn{
-           display:inline-block;
+        .applyBtn, .donateBtn{
            padding:0.35em 1.2em;
-           border:0.1em solid #FFFFFF;
-           margin: .5em;
+           margin: 1em;
            text-decoration:none;
-           background-color: black;
+           border-radius: 2em;
            text-align:center;
            transition: all 0.2s;
-           color: #fff
+           color: #fff;
+        }
+
+        .donateBtn{
+           background-color: red;
+        }
+
+        .applyBtn{
+           background-color: black;
         }
 
         .applyBtn:hover{
@@ -93,39 +102,31 @@ const Home = () => {
           color: #fff
         }
 
-        .donateBtn{
-           display:inline-block;
-           padding:0.35em 1.2em;
-           border:0.1em solid #FFFFFF;
-           margin: .5em;
-           text-decoration:none;
-           background-color: red;
-           text-align:center;
-           transition: all 0.2s;
-           color: #fff
-        }
-
         .donateBtn:hover{
           border-color: red;
           background-color:black;
           color: #fff
         }
+
         .section{
-          margin: 5em;
+          margin: 3em 5em;
           display: flex;
           flex-direction: column;
           align-items: center;
         }
 
         h1{
+          font-size: 28px;
           text-align: center;
           font-weight: normal;
-          margin: 0
+          margin: .5em;
+          line-height: 1.4
         }
 
         p{
           text-align: center;
-          margin: .5em
+          margin: .5em 1.2em;
+          line-height: 1.6
         }
 
         .dropDown{
@@ -158,7 +159,6 @@ const Home = () => {
           z-index: 1;
         }
       
-
         .burger {
           display: inline;
           height: 30px;
@@ -209,9 +209,7 @@ const Home = () => {
           overflow-x: hidden;
           padding: 0;
           margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
+          font-family: 'Roboto', sans-serif;
         }
 
         * {
