@@ -1,10 +1,33 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+
+
 
 const Home = () => {
   const [toggle, setToggle] = useState(false)
-
   const Toggle = () => {
     setToggle(!toggle)
+  }
+  const getWindowDimensions = () =>{
+    const { innerWidth: width, innerHeight: height } = window
+    return {
+      width,
+      height
+    };
+  }
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions);
+
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  if(windowDimensions > 760){
+    setToggle(true)
   }
 
   return (
@@ -30,7 +53,6 @@ const Home = () => {
               <ul>DONATE NOW!</ul>
             </nav>}
           </div>
-          
         </div>
       </header>
 
