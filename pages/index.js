@@ -1,37 +1,28 @@
 import React, { useState, useEffect } from 'react'
 
 
-
 const Home = () => {
+  let w
   const [toggle, setToggle] = useState(false)
+  const [resize, setResize] = useState(false)
   const Toggle = () => {
     setToggle(!toggle)
   }
-  const getWindowDimensions = () =>{
-    const { innerWidth: width, innerHeight: height } = window
-    return {
-      width,
-      height
-    };
-  }
-  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions);
-
 
   useEffect(() => {
-    function handleResize() {
-      setWindowDimensions(getWindowDimensions());
+    w = window.innerWidth
+    console.log(w)
+    if(w > 760){
+      setToggle(true)
     }
-
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
+    
   }, []);
 
-  if(windowDimensions > 760){
-    setToggle(true)
+  const handleResize = () => {
+    setResize(true)
   }
-
   return (
-    <div className="container">
+    <div className="container" >
       <head>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet" />
       </head>
